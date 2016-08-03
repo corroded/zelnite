@@ -1,0 +1,6 @@
+<h2>Edit unit</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: unit_path(@conn, :update, @unit) %>
+
+<%= link "Back", to: unit_path(@conn, :index) %>

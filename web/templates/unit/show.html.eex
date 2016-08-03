@@ -1,0 +1,28 @@
+<h2>Show unit</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @unit.name %>
+  </li>
+
+  <li>
+    <strong>Stars:</strong>
+    <%= @unit.stars %>
+  </li>
+
+  <li>
+    <strong>Cost:</strong>
+    <%= @unit.cost %>
+  </li>
+
+  <li>
+    <strong>Thumbnail url:</strong>
+    <%= @unit.thumbnail_url %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: unit_path(@conn, :edit, @unit) %>
+<%= link "Back", to: unit_path(@conn, :index) %>

@@ -1,0 +1,32 @@
+<h2>Listing units</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Stars</th>
+      <th>Cost</th>
+      <th>Thumbnail url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for unit <- @units do %>
+    <tr>
+      <td><%= unit.name %></td>
+      <td><%= unit.stars %></td>
+      <td><%= unit.cost %></td>
+      <td><%= unit.thumbnail_url %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: unit_path(@conn, :show, unit), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: unit_path(@conn, :edit, unit), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: unit_path(@conn, :delete, unit), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New unit", to: unit_path(@conn, :new) %>
