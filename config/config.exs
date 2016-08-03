@@ -8,11 +8,12 @@ use Mix.Config
 # Configures the endpoint
 config :zelnite, Zelnite.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
   secret_key_base: "uxb5AOFEkQXoFmAo77mTv8klooEoVJcaT6acN6aSjwbnWvXQ2lmqSDwwhiU+V0X5",
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: Zelnite.PubSub,
            adapter: Phoenix.PubSub.PG2]
+
+config :zelnite, ecto_repos: [Zelnite.Repo]
 
 # Configures Elixir's Logger
 config :logger, :console,
